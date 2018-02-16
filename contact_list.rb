@@ -9,15 +9,15 @@ def ask (question, kind = "string")
 end
 
 def add_contact
-  contact = {"name" => "", "phone_numbers" => []}
-  contact["name"] = ask("What is the person's name?")
+  contact = {name: "", phone_numbers: []}
+  contact[:name] = ask("What is the person's name?")
   answer = ""
 
   while answer != "n"
     answer = ask("Do you want to add a phone number? (y/n)")
     if answer == "y"
       phone = ask("Enter a phone number: ")
-      contact["phone_numbers"].push(phone)
+      contact[:phone_numbers].push(phone)
     end
   end
 
@@ -34,9 +34,9 @@ end
 puts "----"
 
 contact_list.each do |contact|
-  puts "Name: #{contact["name"]}"
-  if contact["phone_numbers"].size > 0
-    contact["phone_numbers"].each do |phone_number|
+  puts "Name: #{contact[:name]}"
+  if contact[:phone_numbers].size > 0
+    contact[:phone_numbers].each do |phone_number|
       puts "Phone: #{phone_number}"
     end
   end
